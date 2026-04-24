@@ -1,4 +1,4 @@
-import { ArrowLeft, Cpu, ShieldCheck, Wifi, Home, Zap, Server, Database, Phone, Mail, MapPin } from 'lucide-react';
+import { ArrowLeft, ShieldCheck, Wifi, Home, Zap, Server, Phone, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { HabitatContact } from '../components/habitat-iq/HabitatContact';
 import { Button } from '../components/ui/button';
@@ -36,11 +36,14 @@ export default function HabitatPage() {
     <div className="min-h-screen bg-[#0a192f] text-white">
       {/* Navigation / Header */}
       <nav className="fixed top-0 w-full z-50 bg-[#020617]/80 backdrop-blur-md border-b border-white/5 py-4 px-6 md:px-12 flex justify-between items-center">
-        <div className="flex items-center gap-2">
-          <Link to="/" className="w-10 h-10 bg-[#00A8E8] flex items-center justify-center text-white rounded-md">
-            <Cpu className="w-6 h-6" />
+        <div className="bg-[#ffffffd7] p-1.5 rounded-md flex items-center justify-center">
+          <Link to="/">
+            <img
+              src="/images/LOGO-HABITAT-IQ.png"
+              alt="Habitat IQ"
+              className="h-9 w-auto object-contain"
+            />
           </Link>
-          <span className="text-xl font-bold tracking-tighter">HABITAT <span className="text-[#00A8E8]">IQ</span></span>
         </div>
         <Link to="/">
           <Button variant="ghost" className="text-gray-400 hover:text-white border border-white/10">
@@ -59,10 +62,15 @@ export default function HabitatPage() {
           Soluciones Tecnológicas <br />
           <span className="text-[#00A8E8]">Hechas a Medida</span>
         </h1>
-        <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+        <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed mb-10">
           En Habitat IQ, fusionamos ingeniería de vanguardia con las necesidades cotidianas 
           para crear espacios que no solo funcionan, sino que anticipan tus necesidades.
         </p>
+        <Link to="/cotizador-iq">
+          <Button className="h-14 px-8 text-lg bg-[#00A8E8] hover:bg-[#007EA7] text-white font-bold rounded-xl shadow-lg shadow-[#00A8E8]/20 transition-all">
+            Cotiza tus servicios IQ →
+          </Button>
+        </Link>
       </header>
 
       {/* Detailed Services */}
@@ -127,16 +135,19 @@ export default function HabitatPage() {
       {/* Mini Footer */}
       <footer className="py-12 border-t border-white/5 text-center text-gray-500 text-sm">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="flex items-center gap-2">
-            <Cpu className="w-5 h-5 text-[#00A8E8]" />
-            <span className="font-bold text-white tracking-tighter">HABITAT IQ</span>
+          <div className="flex items-center">
+            <img
+              src="/images/LOGO-HABITAT-IQ.png"
+              alt="Habitat IQ"
+              className="h-8 w-auto brightness-0 invert opacity-80"
+            />
           </div>
           <div className="flex gap-8">
             <a href="tel:+573133540258" className="hover:text-white transition-colors flex items-center gap-2">
               <Phone className="w-4 h-4" /> +57 313 3540258
             </a>
-            <a href="mailto:info@inalumh.com" className="hover:text-white transition-colors flex items-center gap-2">
-              <Mail className="w-4 h-4" /> info@inalumh.com
+            <a href="mailto:inalumh@gmail.com" className="hover:text-white transition-colors flex items-center gap-2">
+              <Mail className="w-4 h-4" /> inalumh@gmail.com
             </a>
           </div>
           <p>© 2024 Inalumh S.A.S. - División Tecnológica</p>

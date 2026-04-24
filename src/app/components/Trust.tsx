@@ -84,7 +84,7 @@ export function Trust() {
             {/* Team Image */}
             <div className="relative mb-8 overflow-hidden rounded-sm">
               <ImageWithFallback
-                src="https://images.unsplash.com/photo-1763328044377-d37cd9052d99?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb25zdHJ1Y3Rpb24lMjB0ZWFtJTIwd29ya2VycyUyMHNpdGV8ZW58MXx8fHwxNzc0NzU5NTI4fDA&ixlib=rb-4.1.0&q=80&w=1080"
+                src="/images/mantenimiento_y_especiales_Pequeno.jpg"
                 alt="Equipo INALUMH"
                 className="w-full h-64 object-cover grayscale hover:grayscale-0 transition-all duration-500"
               />

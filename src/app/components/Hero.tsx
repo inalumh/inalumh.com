@@ -8,7 +8,7 @@ export function Hero() {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <ImageWithFallback
-          src="https://images.unsplash.com/photo-1763189158851-a12144e779b5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBjb25zdHJ1Y3Rpb24lMjBidWlsZGluZyUyMGFyY2hpdGVjdHVyZXxlbnwxfHx8fDE3NzQ2NDQzODR8MA&ixlib=rb-4.1.0&q=80&w=1080"
+          src="/images/construction_bg_Grande.jpg"
           alt="Modern Construction"
           className="w-full h-full object-cover"
         />
@@ -41,7 +41,7 @@ export function Hero() {
           
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button variant="primary" size="lg">
+            <Button variant="primary" size="lg" onClick={() => window.open('/cotizador', '_self')}>
               Solicitar cotización
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>

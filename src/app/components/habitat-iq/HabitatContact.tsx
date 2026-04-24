@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { Send, Loader2, Sparkles } from 'lucide-react';
+import emailjs from '@emailjs/browser';
+import { supabase } from '../../../lib/supabase';
 import { Input } from '../ui/input';
 import { Textarea } from '../ui/textarea';
 import { Button } from '../ui/button';
@@ -19,24 +21,44 @@ export function HabitatContact() {
     setLoading(true);
 
     try {
-      const response = await fetch('/api/contact.php', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+      // 1. Guardar en Base de Datos Supabase
+      const { error: dbError } = await supabase
+        .from('mensajes_contacto')
+        .insert([
+          {
+            nombre: formData.nombre,
+            email: formData.email,
+            mensaje: `[HABITAT IQ] ${formData.mensaje}`,
+          }
+        ]);
 
-      const result = await response.json();
+      if (dbError) throw new Error('Error al guardar en base de datos: ' + dbError.message);
 
-      if (result.success) {
-        toast.success("Consulta enviada. Un especialista de Habitat IQ te contactará.");
-        setFormData({ nombre: '', email: '', mensaje: '', area: 'Habitat IQ' });
+      // 2. Enviar por EmailJS
+      const serviceId  = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+      const publicKey  = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+      if (serviceId && templateId && publicKey) {
+        await emailjs.send(
+          serviceId,
+          templateId,
+          {
+            from_name: formData.nombre + " (Habitat IQ)",
+            reply_to: formData.email,
+            message: formData.mensaje,
+          },
+          publicKey
+        );
       } else {
-        toast.error(result.message);
+        console.warn("EmailJS credentials faltantes. Revisa tu .env");
       }
+
+      toast.success("Consulta enviada. Un especialista de Habitat IQ te contactará.");
+      setFormData({ nombre: '', email: '', mensaje: '', area: 'Habitat IQ' });
     } catch (error) {
-      toast.error('Error al conectar con el servidor.');
+      console.error(error);
+      toast.error('Error al conectar con el servidor. Reintenta más tarde.');
     } finally {
       setLoading(false);
     }
@@ -69,7 +91,7 @@ export function HabitatContact() {
               />
             </div>
             <div className="space-y-2">
-              <label className="text-xs font-bold text-gray-400 uppercase tracking-widest pl-1">Email Corporativo</label>
+              <label className="text-xs font-bold text-gray-400 uppercase tracking-widest pl-1">Email</label>
               <Input 
                 className="bg-white/5 border-white/10 text-white h-12"
                 type="email"
@@ -91,7 +113,7 @@ export function HabitatContact() {
             </div>
             <div className="md:col-span-2 pt-4">
               <Button type="submit" disabled={loading} className="w-full h-14 bg-gradient-to-r from-[#00A8E8] to-[#007EA7] hover:scale-[1.02] transition-transform text-lg font-bold">
-                {loading ? <Loader2 className="animate-spin" /> : <><Send className="mr-2 w-5 h-5" /> Solicitar Consultoría IQ</>}
+                {loading ? <Loader2 className="animate-spin" /> : <><Send className="mr-2 w-5 h-5" /> Solicitar Consultoría</>}
               </Button>
             </div>
           </form>

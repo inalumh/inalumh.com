@@ -1,5 +1,5 @@
-import { ArrowRight, Phone, Mail } from 'lucide-react';
-import { Button } from './Button';
+import { ArrowRight, Phone, Mail, Calculator } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export function CTASection() {
   return (
@@ -22,10 +22,15 @@ export function CTASection() {
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-          <Button variant="outline" size="lg">
-            Solicitar cotización
-            <ArrowRight className="ml-2 w-5 h-5" />
-          </Button>
+          <Link
+            to="/cotizador"
+            className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold bg-white text-[#E63946]
+             hover:bg-white/90 transition-all duration-300 rounded-sm shadow-lg hover:shadow-xl gap-2"
+          >
+            <Calculator className="w-5 h-5" />
+            Cotizar mi proyecto
+            <ArrowRight className="w-5 h-5" />
+          </Link>
           <button className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold bg-white/10 text-white
            hover:bg-white/20 transition-all duration-300 rounded-sm backdrop-blur-sm border border-white/30"
            onClick={() => window.location.href = './docs/brochure.pdf'}
@@ -42,7 +47,7 @@ export function CTASection() {
             </div>
             <div className="text-left">
               <div className="text-sm text-white/70">Llámanos</div>
-              <div className="font-semibold">+57 (300) 123-4567</div>
+              <div className="font-semibold">+57 (313) 354-0258</div>
             </div>
           </a>
           
@@ -52,7 +57,7 @@ export function CTASection() {
             </div>
             <div className="text-left">
               <div className="text-sm text-white/70">Escríbenos</div>
-              <div className="font-semibold">contacto@inalumh.com</div>
+              <div className="font-semibold">inalumh@gmail.com</div>
             </div>
           </a>
         </div>

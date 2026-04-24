@@ -68,9 +68,9 @@ export function HabitatSection() {
                   <MousePointer2 className="ml-2 w-4 h-4" />
                 </Button>
               </Link>
-              <a href="#contacto" className="inline-flex items-center justify-center px-8 h-12 text-gray-300 hover:text-white transition-colors border border-white/10 rounded-lg">
-                Asesoría Gratuita
-              </a>
+              <Link to="/cotizador-iq" className="inline-flex items-center justify-center px-8 h-12 text-gray-300 hover:text-white transition-colors border border-white/10 hover:border-white/20 hover:bg-white/5 rounded-lg">
+                Cotizar Servicios IQ
+              </Link>
             </div>
           </div>
 

@@ -105,7 +105,7 @@ export function Contact() {
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-[#1a1a1a]">Correo electrónico</h3>
-                  <p className="text-gray-600">contacto@inalumh.com</p>
+                  <p className="text-gray-600">inalumh@gmail.com</p>
                 </div>
               </div>
             </div>
