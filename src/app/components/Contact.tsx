@@ -19,8 +19,11 @@ export function Contact() {
     e.preventDefault();
     setLoading(true);
 
+    let dbSaved = false;
+    let emailSent = false;
+
+    // 1. Intentar guardar en Base de Datos Supabase (independiente)
     try {
-      // 1. Guardar en Base de Datos Supabase
       const { error: dbError } = await supabase
         .from('mensajes_contacto')
         .insert([
@@ -31,9 +34,17 @@ export function Contact() {
           }
         ]);
 
-      if (dbError) throw new Error('Error al guardar en base de datos: ' + dbError.message);
+      if (dbError) {
+        console.warn('[Supabase] No se pudo guardar en BD:', dbError.message);
+      } else {
+        dbSaved = true;
+      }
+    } catch (err) {
+      console.warn('[Supabase] Error al conectar con BD:', err);
+    }
 
-      // 2. Enviar por EmailJS
+    // 2. Intentar enviar por EmailJS (independiente)
+    try {
       const serviceId  = import.meta.env.VITE_EMAILJS_SERVICE_ID;
       const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
       const publicKey  = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
@@ -49,19 +60,23 @@ export function Contact() {
           },
           publicKey
         );
+        emailSent = true;
       } else {
         console.warn("EmailJS credentials faltantes. Revisa tu .env");
       }
+    } catch (err) {
+      console.error('[EmailJS] Error al enviar email:', err);
+    }
 
+    // 3. Evaluar resultado final
+    if (emailSent || dbSaved) {
       toast.success('Mensaje enviado correctamente. Te contactaremos pronto.');
       setFormData({ nombre: '', email: '', mensaje: '' });
-
-    } catch (error) {
-      console.error(error);
+    } else {
       toast.error('Hubo un error al enviar el mensaje. Reintenta más tarde.');
-    } finally {
-      setLoading(false);
     }
+
+    setLoading(false);
   };
 
   return (

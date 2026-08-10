@@ -2,7 +2,7 @@
 
 Este es el repositorio oficial del sitio web de **Inalumh S.A.S.**, una empresa líder en soluciones de construcción, renovación y mantenimiento en Bogotá, Colombia.
 
-El sitio ofrece una plataforma informativa sobre los servicios de la empresa, incluyendo áreas de vidrio, aluminio, obra civil, acabados e instalaciones técnicas, además de un portafolio dinámico de proyectos destacados.
+Este sitio ofrece una plataforma informativa sobre los servicios de la empresa, incluyendo áreas de vidrio, aluminio, obra civil, acabados, licencias de construcción ante curadurías e instalaciones técnicas, además de cotizadores inteligentes y un portafolio dinámico.
 
 ## 🚀 Tecnologías Utilizadas (Modernización 2026)
 
@@ -27,8 +27,9 @@ inalumh.com/
 │   └── .htaccess           # Reglas de Apache importantes para routing SPA
 ├── src/                    # Código fuente principal de React
 │   ├── app/                # Lógica principal de vistas
-│   │   ├── components/     # Componentes de UI (Header, Footer, Projects, Contact, etc.)
-│   │   └── pages/          # Páginas (Home, HabitatIQ, etc.)
+│   │   ├── components/     # Componentes de UI (Header, Footer, LicensingSection, Contact, etc.)
+│   │   │   └── modals/     # Modales emergentes (LicenseEmailModal, WorkWithUsModal, etc.)
+│   │   └── pages/          # Páginas (Home, HabitatIQ, Cotizador, etc.)
 │   ├── lib/                # Utilidades e integraciones 
 │   │   └── supabase.ts     # Cliente de inicialización de Base de Datos
 │   └── main.tsx            # Punto de entrada de React

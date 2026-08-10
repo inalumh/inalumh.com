@@ -38,6 +38,7 @@ import {
   CalendarCheck,
 } from 'lucide-react';
 import { WhatsAppButton } from '../components/WhatsAppButton';
+import { CotizadorNoticeModal } from '../components/CotizadorNoticeModal';
 import { constructionServices, DIFFICULTY_FACTORS } from './pricingData';
 import { calculateQuotation } from './useQuotationCalculator';
 import type {
@@ -349,6 +350,7 @@ export default function CotizadorPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#f8f8f8] via-white to-[#fdf2f2]">
+      <CotizadorNoticeModal theme="red" />
       {/* ── Top bar ─────────────────────────────────────────────────── */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-200/60">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">

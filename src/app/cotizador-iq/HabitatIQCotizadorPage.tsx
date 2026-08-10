@@ -9,6 +9,7 @@ import {
   ChevronRight, FileDown, PhoneCall, MessageCircle, CalendarCheck
 } from 'lucide-react';
 import { WhatsAppButton } from '../components/WhatsAppButton';
+import { CotizadorNoticeModal } from '../components/CotizadorNoticeModal';
 import { techCategories, HABITAT_PACKAGES } from './habitatPricingData';
 import { calculateHabitatQuotation } from './useHabitatCalculator';
 import type { QualityTier, TechCategory, TechServiceSelection, HabitatQuotationResult } from './habitat.types';
@@ -249,6 +250,7 @@ export default function HabitatIQCotizadorPage() {
 
   return (
     <div className="min-h-screen bg-[#0a192f] text-white">
+      <CotizadorNoticeModal theme="cyan" />
       {/* ── Top bar ─────────────────────────────────────────────────── */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-[#020617]/80 backdrop-blur-md border-b border-white/10">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">

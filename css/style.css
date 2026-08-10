@@ -1,0 +1,284 @@
+ body {
+   font-family: 'Open Sans', sans-serif;
+   margin: 0;
+   padding: 0;
+   overflow-x: hidden;
+ }
+ .navbar {
+   background-color: #24272A;
+   top: 0;
+   z-index: 1000;
+ }
+ /*.navbar-nav {
+  margin-left: auto;
+  margin-right: auto;
+}*/
+ .navbar-brand, .nav-link {
+   color: #fff !important;
+ }
+ .nav-link:hover {
+   background-color: #F5333F;
+   color: #fff !important;
+ }
+ .navbar-toggler-icon {
+   color: white; /* Cambia el color del ícono a blanco */
+ }
+ .navbar-toggler {
+   background-color: white; /* Ajusta el color de fondo del botón según el color de tu barra de navegación */
+   border-color: white; /* Opcional: ajusta el color del borde si es visible */
+ }
+ .hero {
+   background-image: url('https://inalumh.com/images/construction_bg.jpg');
+   background-size: cover;
+   background-position: center;
+   height: 100vh;
+   color: #fff;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+   position: relative;
+ }
+ @media (max-width: 576px) {
+   .hero {
+     background-image: url('https://inalumh.com/images/construction_bg_Pequeno.jpg');
+   }
+ }
+ @media (min-width: 577px) and (max-width: 768px) {
+   .hero {
+     background-image: url('https://inalumh.com/images/construction_bg_Mediano.jpg');
+   }
+ }
+ @media (min-width: 769px) {
+   .hero {
+     background-image: url('https://inalumh.com/images/construction_bg_Grande.jpg');
+   }
+ }
+ .hero::before {
+   content: "";
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, 0.5); /* Ajusta la opacidad según sea necesario */
+   z-index: 1;
+ }
+ .hero h1, .hero p, .hero a {
+   z-index: 2;
+ }
+ .btn-primary {
+   background-color: #F5333F;
+   border: none;
+   padding: 10px 20px;
+   color: #fff;
+   text-decoration: none;
+   border-radius: 5px;
+ }
+ .btn-primary:hover {
+   background-color: #888a8c;
+ }
+ .project {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   text-align: center;
+   margin-bottom: 1rem;
+ }
+ .project img {
+   max-height: 300px;
+   width: 100%;
+   object-fit: cover;
+   border-radius: 10px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+ }
+ .project p {
+   margin-top: 0.5rem;
+ }
+ .carousel-item {
+   padding: 1rem;
+ }
+ .carousel-control-prev, .carousel-control-next {
+   width: 5%;
+ }
+ .carousel-control-prev-icon, .carousel-control-next-icon {
+   background-color: #F5333F;
+   border-radius: 50%;
+   width: 50px;
+   height: 50px;
+ }
+ .carousel-control-prev {
+   left: -60px; /* Ajusta la posición a la izquierda */
+ }
+ .carousel-control-next {
+   right: -60px; /* Ajusta la posición a la derecha */
+ }
+ ul {
+   list-style-type: disc; /* Tipo de viñeta */
+   /*color: black; /* Color de las viñetas */
+ }
+ .dark-bullets ul li {
+   /*color: black; /* Color del texto */
+ }
+ .img-container {
+   position: relative;
+   width: 100%;
+   height: 200px; /* Ajusta la altura según tus necesidades */
+   overflow: hidden;
+   border-radius: 8px 8px 0 0; /* Mantiene los bordes redondeados en la parte superior */
+ }
+ .img-container img {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   object-fit: cover; /* Esto asegura que la imagen cubra el contenedor sin deformarse */
+ }
+ .img-container-1 {
+   display: flex;
+   justify-content: center; /* Centrar horizontalmente */
+   align-items: center; /* Centrar verticalmente si es necesario */
+ }
+ .img-container-1 img {
+   max-width: auto; /* Ajustar el tamaño de la imagen al 90% del contenedor */
+   height: auto; /* Mantener la proporción de la imagen */
+   /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra alrededor de la imagen */
+   /*border-radius: 8px; /* Borde redondeado */
+ }
+ .img-container-2 {
+   display: flex;
+   justify-content: center; /* Centrar horizontalmente */
+   align-items: center; /* Centrar verticalmente si es necesario */
+ }
+ .img-container-2 img {
+   padding-top: 0.6rem;
+   max-width: auto; /* Ajustar el tamaño de la imagen al 90% del contenedor */
+   height: auto; /* Mantener la proporción de la imagen */
+   /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra alrededor de la imagen */
+   /*border-radius: 8px; /* Borde redondeado */
+ }
+ .title-container-1 {
+   background-color: #144C5E;
+   padding: 10px;
+   margin: -16px 0 16px 0; /*  Ajusta los márgenes para que el título ocupe todo el ancho */
+ }
+ .supply-installation-1 {
+   background-color: #144C5E; /* Cambia este color al azul que deseas */
+   color: white;
+   padding: 6px;
+   font-size: 1em; /* Aumenta el tamaño de la fuente */
+   text-align: center; /* Alinea el texto a la derecha */
+ }
+ .title-container-2 {
+   background-color: #1B2027;
+   padding: 10px;
+   margin: -16px 0 16px 0; /*  Ajusta los márgenes para que el título ocupe todo el ancho */
+ }
+ .supply-installation-2 {
+   background-color: #000000; /* Cambia este color al azul que deseas */
+   color: white;
+   padding: 10px;
+   text-align: left; /* Alinea el texto a la derecha */
+ }
+ .title-container-3 {
+   background-color: #F2622B;
+   padding: 10px;
+   margin: -16px 0 16px 0; /*  Ajusta los márgenes para que el título ocupe todo el ancho */
+ }
+ .supply-installation-3 {
+   background-color: #F2622B; /* Cambia este color al azul que deseas */
+   color: white;
+   padding: 10px;
+   text-align: left; /* Alinea el texto a la derecha */
+ }
+ .title-container-4 {
+   background-color: #13917E;
+   padding: 10px;
+   margin: -16px 0 16px 0; /*  Ajusta los márgenes para que el título ocupe todo el ancho */
+ }
+ .supply-installation-4 {
+   background-color: #13917e; /* Cambia este color al azul que deseas */
+   color: white;
+   padding: 10px;
+   text-align: left; /* Alinea el texto a la derecha */
+ }
+ .title-container h3 {
+   margin-bottom: 0;
+ }
+ .whatsapp-icon {
+   position: fixed;
+   bottom: 20px;
+   right: 20px;
+   width: 60px;
+   height: 60px;
+   border-radius: 50%;
+   background-color: #25D366; /* Color de fondo del ícono */
+   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Sombra */
+   z-index: 1000; /* Asegura que esté por encima de otros contenidos */
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   transition: transform 0.3s ease;
+ }
+ .whatsapp-icon:hover {
+   transform: scale(1.1); /* Efecto de escala al pasar el mouse */
+ }
+ .whatsapp-icon img {
+   width: 40px; /* Tamaño del ícono de WhatsApp */
+   height: 40px;
+ }
+/* Estilos personalizados */
+.contact-info {
+  margin-bottom: 20px;
+}
+.contact-info h4 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+.contact-info p {
+  margin-bottom: 10px;
+}
+.contact-info i {
+  color: #13917E;
+  margin-right: 10px;
+}
+.contact-info a {
+  color: #000;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+.contact-info a:hover {
+  color: #13917E;
+}
+.contact-info a i {
+  margin-right: 10px;
+  color: #13917E;
+}
+.map-container {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+}
+footer {
+  background-color: #13917E;
+  color: white;
+  padding: 20px 0;
+}
+
+footer p {
+  margin: 0;
+  padding: 5px 0;
+}
+
+footer .designer-link {
+  color: #FFFFFF; /* Color dorado para destacar */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer .designer-link:hover {
+  color: #F2622B; /* Cambia a blanco al pasar el mouse */
+}

@@ -10,6 +10,7 @@ export function Header() {
     { label: 'Inicio', href: '#inicio' },
     { label: 'Servicios', href: '#servicios' },
     { label: 'Habitat IQ', href: '#habitat-iq' },
+    { label: 'Licencias', href: '#licencias' },
     { label: 'Cotizador', href: '/cotizador' },
     { label: 'Proyectos', href: '#proyectos' },
     { label: 'Contacto', href: '#contacto' }
